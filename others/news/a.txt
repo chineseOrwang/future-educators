@@ -1,0 +1,67 @@
+$message还没修改样式！！！！
+
+24个文件
+更改数据库等：
+index(删除，连接功能转移至news_list)
+categroy:add(end) delete(end) list(end) save(end)
+news:add(end) delete(end) detail(end) edit(end) list save(end) update(end)
+review:delete(end) list(end) news_list(end) save(end) verify(end)
+login:login login_process logout (已删除)
+other:download init  (已删除)
+3:  (已删除)
+
+更换页面等：
+categroy:add(end) delete list(end) save
+news:add(end) delete detail(end) edit(edit) list(end) save update
+review:delete list(end) news_list(end) save verify
+
+
+index
+    login  登录   include
+    $url  传参进来
+
+    news_list   新闻列表(已更改为主页)
+    review_list   评论浏览
+    category_list   类别浏览
+    news_add   新闻发布(end)
+    category_add   添加分类
+                        
+
+login系列
+	login 登录界面
+	    islogin 是否已登录  include
+	    login_process  登录状态  action
+
+	login_process登录状态
+	   database  连接数据库   获取数据库，关闭数据库  include
+	   index   header  login_message=...
+
+	loginout注销
+
+news系列
+	news_list 新闻列表      news_list_1  news_lists_2  疑似无用
+		database islogin
+		page  一个分页函数
+		news_edit 新闻编辑
+	news_detail  新闻详细页面
+		review_news_list  某一新闻评论列表
+		review_save  保存评论
+	news_edit 新闻编辑页面
+		new_update  新闻修改状态页面
+	news_add 增加新闻
+
+review系列
+	review_save 添加；评论保存
+	review_news_list 某一文章评论列表
+	review_list 所有评论列表
+		review_delete  评论删除
+		review_verify  审核确认
+
+	review_verify  评论审核，在这里添加管理员权限
+	review_delete  评论删除 
+
+category系列
+	category_list  类别列表
+	category_add  类别增加
+		category_save  类别保存
+	categrty_save   

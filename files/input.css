@@ -1,0 +1,19 @@
+input[type=submit],input[type=button],input[type=reset]{
+	width:100px;
+	height: 34px;
+	padding: 6px 12px;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	border-radius: 4px;
+	color: white;
+}
+input[type=submit]:hover,input[type=button]:hover,input[type=reset]:hover{
+	background-color: #2e6da4;
+}
+textarea,input[type=text]{
+	border: #999 solid 1px;
+	padding: 4px 0 4px 4px;
+}
+textarea:focus,input[type=text]:focus{
+	border: blue solid 1px;
+}
